@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}" xml:lang="{S_USER_LANG}">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset={S_CONTENT_ENCODING}" />
+<meta http-equiv="content-language" content="{S_USER_LANG}" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="copyright" content="Aion" />
+<meta name="keywords" content="aion, private, server, forum" />
+<meta name="description" content="Aion Private Server" />
+<link rel="shortcut icon" href="{T_IMAGESET_PATH}/favicon.ico"/>
+{META}
+<title>{SITENAME} - {SITE_DESCRIPTION} - <!-- IF S_IN_MCP -->{L_MCP} - <!-- ELSEIF S_IN_UCP -->{L_UCP} - <!-- ENDIF -->{PAGE_TITLE}</title>
+
+<link rel="stylesheet" href="{T_STYLESHEET_LINK}" type="text/css" />
+<script type="text/javascript" src="{T_TEMPLATE_PATH}/mootools.js"></script>
+<script type="text/javascript" src="{T_TEMPLATE_PATH}/airbox.js"></script>
+<link rel="stylesheet" href="{T_THEME_PATH}/slimbox_css/slimbox.css" type="text/css" media="screen" />
+<script type="text/javascript">
+// <![CDATA[
+<!-- IF S_USER_PM_POPUP -->
+	if ({S_NEW_PM})
+	{
+		popup('{UA_POPUP_PM}', 400, 225, '_phpbbprivmsg');
+	}
+<!-- ENDIF -->
+
+function popup(url, width, height, name)
+{
+	if (!name)
+	{
+		name = '_popup';
+	}
+
+	window.open(url.replace(/&amp;/g, '&'), name, 'height=' + height + ',resizable=yes,scrollbars=yes,width=' + width);
+	return false;
+}
+
+function jumpto()
+{
+	var page = prompt('{LA_JUMP_PAGE}:', '{ON_PAGE}');
+	var perpage = '{PER_PAGE}';
+	var base_url = '{A_BASE_URL}';
+
+	if (page !== null && !isNaN(page) && page > 0)
+	{
+		document.location.href = base_url.replace(/&amp;/g, '&') + '&start=' + ((page - 1) * perpage);
+	}
+}
+
+/**
+* Find a member
+*/
+function find_username(url)
+{
+	popup(url, 760, 570, '_usersearch');
+	return false;
+}
+
+/**
+* Mark/unmark checklist
+* id = ID of parent container, name = name prefix, state = state [true/false]
+*/
+function marklist(id, name, state)
+{
+	var parent = document.getElementById(id);
+	if (!parent)
+	{
+		eval('parent = document.' + id);
+	}
+
+	if (!parent)
+	{
+		return;
+	}
+
+	var rb = parent.getElementsByTagName('input');
+	
+	for (var r = 0; r < rb.length; r++)
+	{
+		if (rb[r].name.substr(0, name.length) == name)
+		{
+			rb[r].checked = state;
+		}
+	}
+}
+
+<!-- IF ._file -->
+
+	/**
+	* Play quicktime file by determining it's width/height
+	* from the displayed rectangle area
+	*
+	* Only defined if there is a file block present.
+	*/
+	function play_qt_file(obj)
+	{
+		var rectangle = obj.GetRectangle();
+
+		if (rectangle)
+		{
+			rectangle = rectangle.split(',')
+			var x1 = parseInt(rectangle[0]);
+			var x2 = parseInt(rectangle[2]);
+			var y1 = parseInt(rectangle[1]);
+			var y2 = parseInt(rectangle[3]);
+
+			var width = (x1 < 0) ? (x1 * -1) + x2 : x2 - x1;
+			var height = (y1 < 0) ? (y1 * -1) + y2 : y2 - y1;
+		}
+		else
+		{
+			var width = 200;
+			var height = 0;
+		}
+
+		obj.width = width;
+		obj.height = height + 16;
+
+		obj.SetControllerVisible(true);
+
+		obj.Play();
+	}
+<!-- ENDIF -->
+
+// ]]>
+</script>
+<link href="{T_THEME_PATH}/web/style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+</head>
+<body class="{S_CONTENT_DIRECTION}">
+
+<div class="outside">
+<div id="titel">
+	
+</div>
+<br/><br/><br/>
+<div class="top-left"></div><div class="top-center"></div><div class="top-right"></div>
+<div class="inside">
+<div class="notopgap">
+
+<div id="wrapheader">
+<br />
+	<table class="tablebg" cellspacing="1" width="100%">
+<tr>
+<td class="row1" height="60px" width="65%">
+
+<p class="breadcrumbs" style="line-height: 2em;padding:0em 1em;">
+<a class="titel2" href="{U_INDEX}">{SITENAME} - <span class="normtitel2">{SITE_DESCRIPTION}</span></a><br/>
+<a href="{U_INDEX}"><strong>{L_INDEX}</strong></a>
+<!-- BEGIN navlinks --> 
+- <strong><strong></strong>&nbsp;<a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a>
+<!-- END navlinks -->
+<!-- IF TOPIC_TITLE --><!-- IF U_VIEW_TOPIC -->
+- <a href="{U_VIEW_TOPIC}">{TOPIC_TITLE}</a>
+<!-- ENDIF --><!-- ENDIF -->
+</p>
+
+<div align="center"> <p><!-- IF U_RESTORE_PERMISSIONS --> &nbsp;<a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a><!-- ENDIF -->
+				<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN --> &nbsp;<span style="color: red;">{L_BOARD_DISABLED}</span><!-- ENDIF --></p></div>
+			</td>
+<td class="row2" height="60px" width="100%"><!-- IF not S_USER_LOGGED_IN -->
+
+<form method="post" action="{S_LOGIN_ACTION}" style="float:left;position:relative;">	
+<table width="100%" cellspacing="0">
+<tr>
+<!-- IF SCRIPT_NAME == 'index' -->		
+<td width="90%" style="line-height: 2em;padding:0em 1em;line-height:2em;"><span class="genmed">{L_USERNAME}:</span><br /><span class="genmed">{L_PASSWORD}:</span></td>
+       <td width="10%"><input style="margin-bottom:1px;" tabindex="100" class="post" type="text" name="username" size="10" /><br /><input style="margin-top:1px;" tabindex="101" class="post" type="password" name="password" size="10" /></td>
+          
+          
+          <td width="50%"  nowrap="nowrap"> <!-- IF S_AUTOLOGIN_ENABLED --><!-- ENDIF --><br /><input style="margin-top:6px;" abindex="103" type="submit" class="btnmain" name="login" value="{L_LOGIN}" />
+    </td>
+
+
+<!-- ELSE -->
+<div class="genmed" style="width:200px;line-height: 2em;padding:0em 1em;line-height:2em;text-align:left !important;">
+<a href="{U_LOGIN_LOGOUT}"><strong>{L_LOGIN_LOGOUT}</strong></a>
+<!-- IF not S_IS_BOT -->
+<br/><a href="{U_REGISTER}"><strong>{L_REGISTER}</strong></a>
+<!-- ENDIF -->
+</div>
+<!-- ENDIF -->
+  </tr>
+</table>
+	{S_FORM_TOKEN}
+	</form>
+<!-- ENDIF -->
+
+<table width="100%" cellspacing="0">
+<tr>
+<td class="genmed" style="line-height:2em;padding:0em 1em;">
+<!-- IF not S_IS_BOT -->
+<!-- IF S_USER_LOGGED_IN -->
+<strong>{S_USERNAME}</strong>&nbsp;<b>(</b><a href="{U_LOGIN_LOGOUT}">{L_LOGOUT}</a><b>)</b><br />
+{LAST_VISIT_DATE}<br />
+<!-- ENDIF --></td></tr></table></td>
+</tr>
+</table>
+	<!-- IF not S_USER_LOGGED_IN -->
+<table class="menu2tb" cellpadding="6" cellspacing="0" border="0" width="100%" align="center" style="border-top-width:0px">
+	<tr align="center">
+  <!-- IF not S_IS_BOT -->
+  <!-- IF S_REGISTER_ENABLED --><td class="menu2"> <a href="{U_REGISTER}" >{L_REGISTER}</a></td><!-- ENDIF -->
+<td class="menu2"><a href="{U_LOGIN_LOGOUT}" rel="nofollow">{L_LOGIN}</a></td><!-- ENDIF -->
+    <!-- IF S_DISPLAY_SEARCH --><td class="menu2"><a href="{U_SEARCH}"><strong>{L_SEARCH}</strong></a></td>
+	<!-- ENDIF -->
+
+	<td class="menu2"><a href="{U_FAQ}">{L_FAQ}</a></td>
+</tr></table>	
+<!-- ENDIF -->
+
+<!-- IF S_USER_LOGGED_IN -->
+  <table class="menu2tb" cellpadding="6" cellspacing="0" border="0" width="100%" align="center" style="border-top-width:0px"> 
+   <tr align="left">
+	 
+	 <td class="menu3" style="height: 24px;background-color:#111;">
+	 <img style="vertical-align:middle;" border="0" src="{T_IMAGESET_PATH}/icon.gif"/>
+	 <a class="kat3" href="{U_PROFILE}" rel="nofollow">{L_PROFILE}</a>
+    <img style="vertical-align:middle;" border="0" src="{T_IMAGESET_PATH}/icon.gif"/>
+    <a class="kat3" href="{U_MEMBERLIST}" rel="nofollow">{L_MEMBERLIST}</a>
+    <img style="vertical-align:middle;" border="0" src="{T_IMAGESET_PATH}/icon.gif"/>
+     <!-- IF S_DISPLAY_SEARCH -->
+     <a class="kat3" href="{U_SEARCH}"><strong>{L_SEARCH}</strong></a>
+     <img style="vertical-align:middle;" border="0" src="{T_IMAGESET_PATH}/icon.gif"/>
+     <a class="kat3" href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a>
+     <img style="vertical-align:middle;" border="0" src="{T_IMAGESET_PATH}/icon.gif"/>
+	<a class="kat3" href="{U_SEARCH_SELF}">{L_SEARCH_SELF}</a>
+		  <!-- ENDIF -->
+		  <img style="vertical-align:middle;" border="0" src="{T_IMAGESET_PATH}/icon.gif"/>
+   <a class="kat3" href="{U_FAQ}">{L_FAQ}</a>
+<!-- IF S_DISPLAY_PM --><!-- ENDIF -->
+<!-- IF PRIVATE_MESSAGE_INFO_UNREAD --><!-- ENDIF --><!-- ENDIF --></td>
+</tr></table>
+<!-- ENDIF --><br />
+
+		<br style="clear: both;" />

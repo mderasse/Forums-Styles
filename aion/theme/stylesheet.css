@@ -1,0 +1,942 @@
+/*  phpBB 3.0 Style Sheet
+    --------------------------------------------------------------
+	Style name:		Aion Thor
+	Based on:		subSilver2
+	Design by: 		Nekoji
+	
+	This is an alternative style for phpBB3 for those wishing to stay with
+	the familiar subSilver style of phpBB version 2.x
+	
+	Copyright 2006 phpBB Group ( http://www.phpbb.com/ )
+    --------------------------------------------------------------
+*/
+
+
+/* Main blocks
+---------------------------------------- */
+
+#header-bg {
+	width: 720px;
+	height: 200px;
+	margin: auto;
+}
+
+#wrap-bg {
+	width: 720px;
+	margin: auto;
+}
+
+#wrap {
+	padding: 0;
+	width: 680px;
+	margin: auto;
+}
+
+#simple-wrap {
+	padding: 6px 10px;
+}
+
+#page-body {
+	margin: 4px 0;
+	clear: both;
+}
+
+#page-footer {
+	clear: both;
+}
+
+#page-footer h3 {
+	margin-top: 20px;
+}
+
+#footer-bg {
+	width: 720px;
+	height: 150px;
+	margin: auto;
+}
+
+#logo {
+	color: #FFFFFF;
+	padding: 80px 0px -80px 380px;
+	text-align: center;
+}
+
+a#logo, a.logo:visited {
+	color: #FFFFFF;
+	font: bold 11px arial, helvetica, sans-serif;
+	white-space: nowrap;}
+
+a#logo:hover {
+	color: #40BFE7;
+	font: bold 11px arial, helvetica, sans-serif;
+	padding: 3px 25px 3px 6px;
+	white-space: nowrap;}}
+	
+/* Background
+--------------------------------------------- */
+
+#header-bg {
+	background-image: url("{T_THEME_PATH}/images/bg_header.jpg");
+	background-position: top left;
+	background-repeat: no-repeat;
+}
+
+#wrap-bg {
+	background-image: url("{T_THEME_PATH}/images/bg_wrap.gif");
+	background-repeat: repeat-y;
+}
+
+#footer-bg {
+	background-image: url("{T_THEME_PATH}/images/bg_footer.gif");
+	background-position: top left;
+	background-repeat: none;
+}
+
+/* Layout
+ ------------ */
+* {
+	/* Reset browsers default margin, padding and font sizes */
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	/* Text-Sizing with ems: http://www.clagnut.com/blog/348/ */
+	font-family: Arial, sans-serif;
+	color: #323D4F;
+	background-color: #000000;
+	font-size: 62.5%; /* This sets the default font size to be equivalent to 10px */
+	margin: 0;
+}
+
+#wrapheader {
+	min-height: 120px;
+	height: auto !important;
+	height: 120px;
+	margin: 15px 15px 0 15px;}
+
+#wrapcentre {
+	margin: 15px;
+}
+
+#wrapfooter {
+	text-align: center;
+	clear: both;
+}
+
+#wrapnav {
+	width: 100%;
+	margin: 0px;
+	background-color: #ECECEC;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #A9B8C2;
+}
+
+#dropmenudiv{
+	position:absolute;
+	border:1px solid #E0E0E0;
+	border-bottom-width: 0;
+	font:normal 8pt Arial;
+	line-height:18px;
+	z-index:100;
+
+}
+
+#dropmenudiv a{
+	width: 100%;
+	display: block;
+	text-indent: 3px;
+	border-bottom: 1px solid #E0E0E0;
+	padding: 1px 0;
+	text-decoration: none;
+}
+
+#dropmenudiv a:hover{
+	background-color: #005D8C;
+	color: #ffffff;
+}
+
+#logodesc {
+	background-image: url('./images/site_logo.jpg');
+	background-repeat: none;
+	height: 100px;
+}
+
+.menu2tb { 
+	background : #000000; 
+	color : #000000; 
+	border : 1px solid #000000; 
+}
+
+.menu2 { 
+background : #000000 url('./images/cellpic3.gif') repeat-x  ; 
+font : bold 11px arial, helvetica, sans-serif; 
+padding : 3px 6px 3px 6px; 
+white-space : nowrap; 
+} 
+.menu2 a:link, .menu2 a:visited { 
+color: #7b7954 !important;
+text-decoration : none; 
+} 
+ 
+.menu2 a:hover { 
+color : #9b996f!important; 
+text-decoration : underline; 
+} 
+
+.menu3 { 
+background : #111 url('./images/cellpic2.gif') repeat-x  ; 
+background : #111 url('./images/cellpic2.gif') repeat-x  ; 
+font : bold 11px arial, helvetica, sans-serif; 
+padding : 3px 6px 3px 6px; 
+white-space : nowrap; 
+} 
+.menu3 a:link, .menu2 a:visited { 
+color: #7b7954 !important;
+text-decoration : none; 
+} 
+ 
+.menu3 a:hover { 
+color : #9b996f!important; 
+text-decoration : underline; 
+} 
+
+#datebar {
+	margin-top: 0px;
+}
+
+#findbar {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+.forumrules {
+	background-color: #F9CC79;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #BB9860;
+	padding: 4px;
+	font-weight: normal;
+	font-size: 1.1em;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#pageheader { }
+#pagecontent { }
+#pagefooter { }
+
+#poll { }
+#postrow { }
+#postdata { }
+
+
+/*  Text
+ --------------------- */
+h1 {
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	font-size: 1.8em;
+	text-decoration: none;
+}
+
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 1.5em;
+	text-decoration: none;
+	line-height: 120%;
+}
+
+h3 {
+	font-size: 1.3em;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 120%;
+}
+
+h4 {
+	margin: 0px;
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #999;
+}
+
+p {
+	font-size: 1.1em;
+}
+
+p.moderators {
+	margin: 0px;
+	float: left;
+	color: black;
+	font-weight: bold;
+}
+
+p.linkmcp {
+	margin: 0px;
+	float: right;
+	white-space: nowrap;
+}
+
+p.breadcrumbs {
+	margin: 0px;
+	float: left;
+	color: #aaa;
+	font-weight: bold;
+	white-space: normal;
+	font-size: 1em;
+}
+
+p.datetime {
+	margin: 0px;
+	float: right;
+	white-space: nowrap;
+	font-size: 1em;
+}
+
+p.searchbar {
+	padding: 2px 0;
+	white-space: nowrap;
+} 
+
+p.searchbarreg {
+	margin: 0px;
+	float: right;
+	white-space: nowrap;
+}
+
+p.forumdesc {
+	padding-bottom: 4px;
+}
+
+p.topicauthor {
+	margin: 1px 0px;
+}
+
+p.topicdetails {
+	margin: 1px 0px;
+}
+
+.postreported, .postreported a:visited, .postreported a:hover, .postreported a:link, .postreported a:active {
+	margin: 1px 0px;
+	color: red;
+	font-weight:bold;
+}
+
+.postapprove, .postapprove a:visited, .postapprove a:hover, .postapprove a:link, .postapprove a:active {
+	color: green;
+	font-weight:bold;
+}
+
+.postapprove img, .postreported img {
+	vertical-align: bottom;
+}
+
+.postauthor {
+	color: #999999;
+	font-size: 11px !important;
+	text-align: left;
+}
+
+.postdetails {
+	background-color: #111;
+	border-right: 1px solid #222;
+	border-bottom: 1px solid #222;
+	border-top: 1px solid #000;
+	border-left: 1px solid #000;
+	margin-bottom: 3px;
+	padding: 3px 0px 3px 3px;
+	color: #aaa;
+}
+
+.postbody b,
+.postbody strong,
+.postbody span
+{
+	color: #666;
+}
+
+.postbody {
+	font-size: 1.1em;
+	line-height: 1.5em;
+	font-family: Arial, sans-serif;
+	color: #aaa;
+}
+
+.postbody li, ol, ul {
+	margin-left: 1.5em;
+}
+
+.posthilit {
+	background-color: yellow;
+}
+
+.nav {
+	margin: 0px;
+	color: #666666;
+	font-weight: bold;
+}
+
+.pagination {
+	padding: 4px;
+	color: black;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.cattitle {
+
+}
+
+.gen {
+	margin: 1px 1px;
+	font-size: 11px;
+}
+
+.genmed {
+	margin: 1px 1px;
+	font-size: 1.1em;
+}
+
+.gensmall {
+	margin: 1px 1px;
+	font-size: 1em;
+	line-height: 1.5em;
+}
+
+.copyright {
+	color: #666666;
+	font-weight: normal;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.titles {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 1.3em;
+	text-decoration: none;
+	color: #aaa !important;
+}
+
+.error {
+	color: red;
+}
+
+
+/* Tables
+ ------------ */
+th {
+	color: #ADAEAE;
+	font-size: 1.1em;
+	font-weight: bold;
+	background-color: #000;
+	background-image: url('./images/cellpic3.gif');
+	white-space: nowrap;
+	padding: 2px 5px;
+}
+
+td {
+	padding: 2px;
+
+}
+
+.tablebg {
+	background: #000000 none repeat scroll 0%;
+	color: #555A5F;
+}
+.tablefooter {
+	background-color: #1f1f1f;
+	height: 7px;
+}
+
+.catdiv {
+	height: 28px;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	background-color: black;
+	background-image: url('./images/cellpic2.jpg');
+	background-repeat: repeat-y;
+}
+
+.cat {
+	height: 25px;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	background-image: url('./images/cellpic1.gif');
+	text-indent: 4px;
+
+}
+
+.catline {
+	height: 20px;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	background-color: #E8E8E8;
+	background-image: url('./images/cellpic1.gif');
+	text-indent: 4px;
+}
+
+.row1 {
+	background: #181818 none repeat scroll 0%;
+	border-left: 1px solid #252525;
+	border-top: 1px solid #252525;
+	color: #ADAEAE;
+}
+
+.row2 {
+	background: #1D1D1D none repeat scroll 0%;
+	border-left: 1px solid #252525;
+	border-top: 1px solid #252525;
+	color: #ADAEAE;
+}
+
+.row3 {
+	background: #313131 none repeat scroll 0%;
+	border-left: 1px solid #252525;
+	border-top: 1px solid #252525;
+	color: #ADAEAE;
+}
+
+.row4 {
+	background-color: #E1E4F2;
+	padding: 4px;
+}
+
+
+.rowgood {
+	background-color: #C2D6CD;
+	padding: 4px;
+}
+
+.rowneutral {
+	background-color: #CAC1D7;
+	padding: 4px;
+}
+
+.rowbad {
+	background-color: #D7C1C3;
+	padding: 4px;
+}
+
+.spacer {
+	background-color: #1F1F1F;
+}
+
+hr {
+	height: 1px;
+	border-width: 0px;
+	background-color: #D1D7DC;
+	color: #D1D7DC;
+}
+
+.legend {
+	text-align:center;
+	margin: 0 auto;
+	background-color: #181818;
+	border: 1px #000000 solid;
+}
+
+/* Links
+ ------------ */
+a:link {
+	color: #666666;
+	text-decoration: none;
+}
+
+a:active,
+a:visited {
+	color: #666666;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #7f5a98;
+	text-decoration: underline;
+}
+
+a.forumlink:hover {
+	color: #7f5a98;
+	font-weight: bold;
+	font-family: Arial, sans-serif;
+	font-size: 1.2em;
+}
+
+a.forumlink {
+	color: #666666;
+	font-weight: bold;
+	font-family: Arial, sans-serif;
+	font-size: 1.2em;
+}
+
+a.topictitle {
+	margin: 1px 0px;
+	font-family:Arial, sans-serif;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+a.topictitle:visited {
+	color: #666666;
+	text-decoration: none;
+}
+
+a.topictitle:hover {
+	color: #7f5a98;
+	text-decoration: none;
+}
+
+th a,
+th a:visited {
+	color: #666666 !important;
+	text-decoration: none;
+}
+
+th a:hover {
+	text-decoration: underline;
+}
+
+
+
+#kat {
+	background-color: #F4F4F4;
+	padding: 0 5px 4px 5px;
+	border: 1px #666666 solid;
+}
+
+a.kat, a.kat:visited
+{
+	color: #7b7954;
+	font: bold 12px arial, helvetica, sans-serif;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+}
+
+a.kat:hover 
+{
+	color: #9b996f;
+	font: bold 12px arial, helvetica, sans-serif;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+}
+
+a.kat2, a.kat2:visited
+{
+	color: #7b7954;
+	font: bold 10px arial, helvetica, sans-serif;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+}
+
+a.kat2:hover 
+{
+	color: #9b996f;
+	font: bold 10px arial, helvetica, sans-serif;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+}
+
+a.kat3, a.kat3:visited
+{
+	color: #7b7954;
+	font: bold 11px arial, helvetica, sans-serif;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+}
+
+a.kat3:hover 
+{
+	color: #9b996f;
+	font: bold 11px arial, helvetica, sans-serif;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+}
+
+
+/* Form Elements
+ ------------ */
+form {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+input {
+	color: #666666;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.1em;
+	font-weight: normal;
+	padding: 1px;
+	border: 1px solid #333333;
+	background-color: #000000;
+}
+
+textarea {
+	color: #666666;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.1em;
+	font-weight: normal;
+	padding: 1px;
+	border: 1px solid #333333;
+	background-color: #000000;
+	padding: 2px;
+}
+
+select {
+	color: #666666;
+	background-color: #000000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	font-weight: normal;
+	border: 1px solid #333333;
+	padding: 1px;
+}
+
+option {
+	padding-right: 1em;
+}
+
+input.radio {
+	border: none;
+	background-color: #000000;
+	color: #666666;
+
+}
+
+.post {
+	color: #666666;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.1em;
+	font-weight: normal;
+	padding: 1px;
+	border: 1px solid #333333;
+	background-color: #000000;
+}
+
+.btnbbcode {
+	color: #666666;
+	font-weight: normal;
+	background: #111 url('./images/cellpic4.gif') repeat-x; 
+	border: 1px solid #333333;
+	font-size: 1.1em;
+}
+
+.btnmain {
+	color: #666666;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.1em;
+	font-weight: normal;
+	padding: 1px;
+	border: 1px solid #333;
+	background: #111 url('./images/cellpic4.gif') repeat-x; 
+}
+
+.btnlite {
+	color: #666666;
+	font-weight: normal;
+	background: #111 url('./images/cellpic4.gif') repeat-x; 
+	border: 1px solid #333333;
+	cursor: pointer;
+	padding: 1px 5px;
+	font-size: 1em;
+}
+
+.helpline {
+	background-color: #111;
+	border-style: none;
+	color: #999;
+}
+
+
+/* BBCode
+ ------------ */
+.quotetitle, .attachtitle {
+	margin: 10px 5px 0px 5px;
+	padding: 4px;
+	border-top: 1px solid #000;
+	border-left: 1px solid #000;
+	border-right: 1px solid #222;
+	border-bottom: 1px solid #222;
+	color: #7f5a98;
+	background-color: #111;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.quotetitle .quotetitle {
+	font-size: 1.1em;
+}
+
+.quotecontent, .attachcontent {
+	margin: 0px 5px 10px 5px;
+	padding: 1em;
+	border-top: 1px solid #000;
+	border-left: 1px solid #000;
+	border-right: 1px solid #222;
+	border-bottom: 1px solid #222;
+	font-weight: normal;
+	font-size: 1em;
+	line-height: 1.4em;
+	font-family: Arial, sans-serif;
+	background-color: #111;
+	color: #999;
+	font-style: italic;
+}
+
+.attachcontent {
+	font-size: 0.85em;
+}
+
+.codetitle {
+	margin: 10px 5px 0px 5px;
+	padding: 2px 4px;
+	border-width: 1px 1px 0px 1px;
+	border-style: solid;
+	border-color: #333;
+	color: #333333;
+	background-color: #2C2C2C;
+	font-family: Arial, sans-serif;
+	font-size: 0.8em;
+}
+
+.codecontent {
+	margin: 0px 5px 10px 5px;
+	padding: 5px;
+	border-color: #333;
+	border-width: 0px 1px 1px 1px;
+	border-style: solid;
+	font-weight: normal;
+	color: #999;
+	font-size: 0.85em;
+	font-family: Monaco, 'Courier New', monospace;
+	background-color: #2C2C2C;
+}
+
+.syntaxbg {
+	color: #666666;
+}
+
+.syntaxcomment {
+	color: #FF8000;
+}
+
+.syntaxdefault {
+	color: #0000BB;
+}
+
+.syntaxhtml {
+	color: #000000;
+}
+
+.syntaxkeyword {
+	color: #007700;
+}
+
+.syntaxstring {
+	color: #DD0000;
+}
+
+
+/* Private messages
+ ------------------ */
+.pm_marked_colour {
+	background-color: #000000;
+}
+
+.pm_replied_colour {
+	background-color: #A9B8C2;
+}
+
+.pm_friend_colour {
+	background-color: #007700;
+}
+
+.pm_foe_colour {
+	background-color: #DD0000;
+}
+
+
+/* Misc
+ ------------ */
+ img {
+	border: none;
+}
+
+.blue {
+	color: #006699;
+}
+
+.pbit {
+padding-left: 3px;
+padding-right: 0px;
+padding-top: 3px;
+padding-bottom: 3px;
+border-bottom: 1px solid #ffffff;
+margin-bottom: 3px;
+float: left;
+width: 175px;
+}
+
+.pbitauthor {
+padding-left: 3px;
+padding-right: 0px;
+padding-top: 3px;
+padding-bottom: 3px;
+border-bottom: 1px solid #ffffff;
+margin-bottom: 3px;
+float: left;
+width: 175px;
+color: #7D8AA0;
+font-size: 14px;
+margin-bottom: 3px;
+font-weight: bold;
+}
+
+.pbitdetails {
+padding-left: 3px;
+padding-right: 0px;
+padding-top: 3px;
+padding-bottom: 3px;
+border-bottom: 1px solid #ffffff;
+margin-bottom: 3px;
+float: left;
+width: 175px;
+color: #000000;
+font-size: 10px; 
+text-align: left;
+}
+.yesil {
+font-weight: bold;
+color: #00AA00;
+}
+
+.gri {
+font-weight: bold;
+color: #8D9AAB;
+}
+
+
+
+.sep {
+	color: black;
+	background-color: #FFA34F;
+}
+
+table.colortable td {
+	padding: 0;
+}
+
+pre {
+	font-size: 1.1em;
+	font-family: Monaco, 'Courier New', monospace;
+}
+
