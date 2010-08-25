@@ -1,0 +1,53 @@
+<!-- INCLUDE overall_header.html -->
+<!-- INCLUDE forumlist_body.html -->
+
+<br clear="all" />
+
+<!-- INCLUDE breadcrumbs.html -->
+<br clear="all" />
+<table class="tablebg" width="100%" cellspacing="1">
+<!-- IF S_DISPLAY_ONLINE_LIST -->
+	<tr>
+		<td class="cat" colspan="2"><h4><a class="kat" href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a></h4></td>
+	</tr>
+	<tr>
+	<!-- IF LEGEND -->
+		<td class="row1" rowspan="3" align="center" valign="middle" style="padding:6px;"><img src="{T_THEME_PATH}/images/whosonline.gif" alt="{L_WHO_IS_ONLINE}" /></td>
+	<!-- ELSE -->
+		<td class="row1" rowspan="2" align="center" valign="middle" style="padding:6px;"><img src="{T_THEME_PATH}/images/whosonline.gif" alt="{L_WHO_IS_ONLINE}" /></td>
+	<!-- ENDIF -->
+		<td class="row1" width="100%" style="padding:6px;"><span class="genmed">{TOTAL_USERS_ONLINE}</span></td>
+	</tr>
+	<tr>
+		<td class="row1" width="100%" style="padding:6px;"><span class="genmed">{LOGGED_IN_USER_LIST}<br /><br />{L_ONLINE_EXPLAIN}</span></td>
+	</tr>
+	<!-- IF LEGEND -->
+		<tr>
+			<td class="row1" style="padding:6px;"><b class="gensmall">{L_LEGEND} : {LEGEND}</b></td>
+		</tr>
+	<!-- ENDIF -->
+<!-- ENDIF -->
+<tr>
+	<td class="cat" colspan="2"><h4><a class="kat" href="#">{L_STATISTICS}</a></h4></td>
+</tr>
+<tr>
+	<td class="row1" style="padding:6px;"><img src="{T_THEME_PATH}/images/whosonline.gif" alt="{L_STATISTICS}" /></td>
+	<td class="row1" width="100%" valign="middle" style="padding:6px;"><p class="genmed">{TOTAL_POSTS} | {TOTAL_TOPICS} | {TOTAL_USERS} | {NEWEST_USER}<br />{RECORD_USERS}</p></td>
+</tr>
+</table>
+<br clear="all" />
+
+<table class="legend" style="padding:6px;">
+	<tr>
+		<td width="20" align="center">{FORUM_NEW_IMG}</td>
+		<td><span class="gensmall">{L_NEW_POSTS}</span></td>
+		<td>&nbsp;&nbsp;</td>
+		<td width="20" align="center">{FORUM_IMG}</td>
+		<td><span class="gensmall">{L_NO_NEW_POSTS}</span></td>
+		<td>&nbsp;&nbsp;</td>
+		<td width="20" align="center">{FORUM_LOCKED_IMG}</td>
+		<td><span class="gensmall">{L_FORUM_LOCKED}</span></td>
+	</tr>
+</table>
+
+<!-- INCLUDE overall_footer.html -->
